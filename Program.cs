@@ -17,7 +17,7 @@
 
             if (ResCorrecC != Contraseña || ResCorrecU != Usuario)
             {
-                Console.Clear(); //jjajjskkeollep
+                Console.Clear(); 
                 Console.WriteLine("--------------------------------------------");
                 Console.WriteLine("Usuario o Contraseña es incorrecto.");
                 Console.WriteLine("Ingrese nuevamente su usuario y contraseña");
