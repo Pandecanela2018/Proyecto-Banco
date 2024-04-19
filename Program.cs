@@ -8,7 +8,7 @@
         string Usuario = "UsuarioPrueba", bancos, ResCorrecU;
         int Contraseña = 3885, ResCorrecC;
         do
-        {
+        {   
             Console.Write("Ingrese su nombre de usuario: ");
             ResCorrecU = Console.ReadLine();
 
@@ -22,12 +22,9 @@
                 Console.WriteLine("Usuario o Contraseña es incorrecto.");
                 Console.WriteLine("Ingrese nuevamente su usuario y contraseña");
                 Console.WriteLine("--------------------------------------------");
-                Console.WriteLine("Presione cualquier tecla para volver a ingresar sus datos");
-                Console.ReadKey();
-                Console.Clear();
             }
 
-        } while (ResCorrecU != Usuario && ResCorrecC != Contraseña);
+        } while (ResCorrecU != Usuario && ResCorrecC != Contraseña || ResCorrecC == Contraseña && ResCorrecU != Usuario || ResCorrecC != Contraseña && ResCorrecU == Usuario);
         Console.Clear();
 
         do //funcion principal
