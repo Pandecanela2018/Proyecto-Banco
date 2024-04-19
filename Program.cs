@@ -15,7 +15,7 @@
             Console.Write("Ingrese su contraseña: ");
             ResCorrecC = Convert.ToInt32(Console.ReadLine());
 
-            if (ResCorrecC != Contraseña || ResCorrecU != Usuario)
+            if (ResCorrecC != Contraseña || ResCorrecU != Usuario) // función principal
             {
                 Console.Clear();
                 Console.WriteLine("--------------------------------------------");
@@ -30,13 +30,13 @@
         } while (ResCorrecU != Usuario && ResCorrecC != Contraseña);
         Console.Clear();
 
-        do
+        do //funcion principal
         {
             Console.WriteLine("Bienvenido, " + Usuario);
             Console.WriteLine("--------------------------------");
             Console.WriteLine("| ¿En que le podemos ayudar?   |");
             Console.WriteLine("--------------------------------");
-            Console.WriteLine("1.Depósitos a mí cuenta\r\n2.Realizar transacciones\r\n3.Retiro de cuenta\r\n4.Mantener cajas de seguridad\r\n5.dkks\r\n6.sssd\r\n7.Transferencia a otros bancos\r\n8.Salir" + "");
+            Console.WriteLine("1.Depósitos a mí cuenta\r\n2.Realizar transacciones\r\n3.Retiro de cuenta\r\n4.Cambio de moneda\r\n5.Prestamos\r\n6.Transferencia a otros bancos\r\n0.Salir" + "");
             opcion = Convert.ToInt32(Console.ReadLine());
             Console.Clear();
 
@@ -115,15 +115,7 @@
 
                     }
                     break;
-
                 case 4:
-                    Console.WriteLine("");
-                    Console.WriteLine("Ingrese ");
-                    Console.WriteLine("¿Que desea hacer?");
-                    Console.ReadKey();
-                    Console.Clear();
-                    break;
-                case 5:
                     Console.WriteLine("");
                     Console.WriteLine("Ingrese ");
                     Console.WriteLine("¿Que desea hacer?");
@@ -131,14 +123,14 @@
                     Console.ReadKey();
                     Console.Clear();
                     break;
-                case 6:
+                case 5:
                     Console.WriteLine("");
                     Console.WriteLine("Ingrese ");
                     Console.WriteLine("¿Que desea hacer?");
                     Console.ReadKey();
                     Console.Clear();
                     break;
-                case 7:
+                case 6:
                     Console.WriteLine("Eliga el Banco al cual desea tranferir sus ahorro");
                     Console.WriteLine("¿Qué banco desea hacer la transferencia?");
                     Console.WriteLine("1.Davivienda 2.Cuscatlan 3.Hipotecario" + "");
@@ -193,14 +185,14 @@
 
                     }
                     break;
-                case 8:
+                case 0:
                     Console.WriteLine("Muchas gracias por utilizar el banco.");
                     break;
             }
 
 
         } while (opcion != 8);
-    }   }
+ }   }
 
 
 
