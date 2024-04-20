@@ -2,11 +2,11 @@
 {
     public static void Main(string[] args)
     {
-
-        double Saldodecuenta = 5500, monto, cuenta;// Aqui vamos a definir todo las variables que vamos a utilizar para decimales o se que este parametro son para "double" 
-        int opcion;
+        double Intereses1=0, Intereses2 = 0.03, Intereses3 = 0.09, Intereses4 = 0.27, Saldocancelar;
+        double Saldodecuenta = 5500, monto, cuenta, Saldotarjetacredito = 350, Gastodetarjeta, TarjetaRestante;// Aqui vamos a definir todo las variables que vamos a utilizar para decimales o se que este parametro son para "double" 
+        int opcion, diasdemora;
         string Usuario = "UsuarioPrueba", bancos, ResCorrecU;
-        int Contraseña = 3885, ResCorrecC;
+        int Contraseña = 3885, ResCorrecC, Ntarjeta = 78631320, ResCorrecT, ResCorrecCVV, CVV = 555;
         do
         {   
             Console.Write("Ingrese su nombre de usuario: ");
