@@ -7,27 +7,27 @@
         int opcion;
         string Usuario = "UsuarioPrueba", bancos, ResCorrecU;
         int Contraseña = 3885, ResCorrecC;
-        do
-        {   
+        do  // A = funcion Principal
+        {
             Console.Write("Ingrese su nombre de usuario: ");
             ResCorrecU = Console.ReadLine();
-
+            
             Console.Write("Ingrese su contraseña: ");
             ResCorrecC = Convert.ToInt32(Console.ReadLine());
 
-            if (ResCorrecC != Contraseña || ResCorrecU != Usuario) // función principal
+            if (ResCorrecC != Contraseña || ResCorrecU != Usuario) //A.1
             {
                 Console.Clear();
-                Console.WriteLine("--------------------------------------------");
-                Console.WriteLine("Usuario o Contraseña es incorrecto.");
-                Console.WriteLine("Ingrese nuevamente su usuario y contraseña");
-                Console.WriteLine("--------------------------------------------");
-            }
+                Console.WriteLine(" --------------------------------------------");
+                Console.WriteLine("|   Usuario o Contraseña es incorrecto.      |");
+                Console.WriteLine("| Ingrese nuevamente su usuario y contraseña |");
+                Console.WriteLine(" --------------------------------------------");
+            }//A.1
 
-        } while (ResCorrecU != Usuario && ResCorrecC != Contraseña || ResCorrecC == Contraseña && ResCorrecU != Usuario || ResCorrecC != Contraseña && ResCorrecU == Usuario);
+        } while (ResCorrecU != Usuario && ResCorrecC != Contraseña || ResCorrecC == Contraseña && ResCorrecU != Usuario || ResCorrecC != Contraseña && ResCorrecU == Usuario);// A
         Console.Clear();
 
-        do //funcion principal
+        do //B = funcion principal
         {
             Console.WriteLine("Bienvenido, " + Usuario);
             Console.WriteLine("--------------------------------");
@@ -37,7 +37,7 @@
             opcion = Convert.ToInt32(Console.ReadLine());
             Console.Clear();
 
-            switch (opcion)
+            switch (opcion) //B.1
             {
 
                 case 1:
@@ -113,7 +113,7 @@
                     }
                     break;
                 case 4:
-                    Console.WriteLine("");
+                    Console.WriteLine(""); 
                     Console.WriteLine("Ingrese ");
                     Console.WriteLine("¿Que desea hacer?");
                     Console.WriteLine("Presione cualquier tecla para continuar");
@@ -150,7 +150,7 @@
                             Console.ReadKey();
                             Console.Clear();
                             break;
-                        case "cusclatan":
+                        case "cuscatlan":
                             Console.WriteLine("Gracias Por elegir a Cusclatan");
                             Console.WriteLine("Ingrese la cantidad que desea trasferir");
                             double costo2 = Convert.ToDouble(Console.ReadLine());
@@ -177,18 +177,16 @@
                             Console.WriteLine("EL saldo que quedo en este Banco es de: ${0}", Saldodecuenta);
                             Console.ReadKey();
                             Console.Clear();
-                            break;
-
-
+                        break;
                     }
                     break;
                 case 0:
                     Console.WriteLine("Muchas gracias por utilizar el banco.");
-                    break;
-            }
+                 break;
+            }//B.1
 
 
-        } while (opcion != 8);
+        } while (opcion != 8); //B
  }   }
 
 
