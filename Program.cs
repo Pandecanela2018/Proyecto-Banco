@@ -425,14 +425,24 @@
                             double costo = Convert.ToDouble(Console.ReadLine());
                             double costo_descueto = costo - (costo * 0.04);
                             Saldodecuenta = (Saldodecuenta - costo_descueto);
-                            Console.WriteLine("La transacción fue exitosa");
-                            Console.WriteLine("--------------------------------");
-                            Console.WriteLine("El monto a transferir a davivienda es de: ${0} ", costo_descueto);
-                            Console.WriteLine("--------------------------------");
-                            Console.WriteLine("EL saldo que quedo en este Banco es de: ${0}", Saldodecuenta);
-                            Console.WriteLine("Seleccione otra opcion para continuar");
-                            Console.ReadKey();
-                            Console.Clear();
+                            if (Saldodecuenta < costo_descueto)
+ {
+     Console.WriteLine("Saldo insuficiene para realizar esta transferencua");
+     Console.WriteLine("Presione cualquier tecla para continuar");
+     Console.ReadKey();
+     Console.Clear();
+ }
+ else
+ {
+     Console.WriteLine("La transacción fue exitosa");
+     Console.WriteLine("--------------------------------");
+     Console.WriteLine("El monto a transferir a davivienda es de: ${0} ", costo_descueto);
+     Console.WriteLine("--------------------------------");
+     Console.WriteLine("EL saldo que quedo en este Banco es de: ${0}", Saldodecuenta);
+     Console.WriteLine("Seleccione otra opcion para continuar");
+     Console.ReadKey();
+     Console.Clear();
+ }
                             break;
                         case "cuscatlan":
                             Console.WriteLine("Gracias Por elegir a Cusclatan");
@@ -440,13 +450,24 @@
                             double costo2 = Convert.ToDouble(Console.ReadLine());
                             double costo2_descueto = costo2 - (costo2 * 0.08);
                             Saldodecuenta = (Saldodecuenta - costo2_descueto);
-                            Console.WriteLine("La transacción fue exitosa");
-                            Console.WriteLine("--------------------------------");
-                            Console.WriteLine("El monto a transferir a Cuscatlan es de: ${0} ", costo2_descueto);
-                            Console.WriteLine("--------------------------------");
-                            Console.WriteLine("EL saldo que quedo en este Banco es de: ${0}", Saldodecuenta);
-                            Console.ReadKey();
-                            Console.Clear();
+                             if (Saldodecuenta < costo2_descueto )
+  {
+      Console.WriteLine("Saldo insuficiene para realizar esta transferencua");
+      Console.WriteLine("Presione cualquier tecla para continuar");
+      Console.ReadKey();
+      Console.Clear();
+  }
+  else
+  {
+      Console.WriteLine("La transacción fue exitosa");
+      Console.WriteLine("--------------------------------");
+      Console.WriteLine("El monto a transferir a Cuscatlan es de: ${0} ", costo2_descueto);
+      Console.WriteLine("--------------------------------");
+      Console.WriteLine("EL saldo que quedo en este Banco es de: ${0}", Saldodecuenta);
+      Console.ReadKey();
+      Console.Clear();
+
+  }
                             break;
                         case "hipotecario":
                             Console.WriteLine("Gracias Por elegir a Hipotecario");
@@ -454,13 +475,25 @@
                             double costo3 = Convert.ToDouble(Console.ReadLine());
                             double costo3_descueto = costo3 - (costo3 * 0.08);
                             Saldodecuenta = (Saldodecuenta - costo3_descueto);
-                            Console.WriteLine("La transacción fue exitosa");
-                            Console.WriteLine("--------------------------------");
-                            Console.WriteLine("El monto a transferir a Hipotecario es de: ${0} ", costo3_descueto);
-                            Console.WriteLine("--------------------------------");
-                            Console.WriteLine("EL saldo que quedo en este Banco es de: ${0}", Saldodecuenta);
-                            Console.ReadKey();
-                            Console.Clear();
+                               if (Saldodecuenta < costo3_descueto)
+ {
+     Console.WriteLine("Saldo insuficiene para realizar esta transferencua");
+     Console.WriteLine("Presione cualquier tecla para continuar");
+     Console.ReadKey();
+     Console.Clear();
+ }
+ else
+ {
+     Console.WriteLine("La transacción fue exitosa");
+     Console.WriteLine("--------------------------------");
+     Console.WriteLine("El monto a transferir a Hipotecario es de: ${0} ", costo3_descueto);
+     Console.WriteLine("--------------------------------");
+     Console.WriteLine("EL saldo que quedo en este Banco es de: ${0}", Saldodecuenta);
+     Console.ReadKey();
+     Console.Clear();
+
+ }
+
                         break;
                     }
                     break;
