@@ -330,87 +330,118 @@
                     }
                             break;
                 case 5:
-                 Console.WriteLine("");
-                 Console.WriteLine("Ingrese el numero de la Tarjeta a pagar");
-                ResCorrecT = Convert.ToInt32(Console.ReadLine());
+           Console.WriteLine("");
+Console.WriteLine("Ingrese el numero de la Tarjeta a pagar");
+ResCorrecT = Convert.ToInt32(Console.ReadLine());
 
-                if (ResCorrecT==Ntarjeta)
+while (ResCorrecT != Ntarjeta)
 {
-                Console.WriteLine("Ingrese el numero CVV, ubicado atras de su tarjeta");
-                 ResCorrecCVV = Convert.ToInt32(Console.ReadLine());
+    Console.Clear();
+    Console.WriteLine("Numero de Tarjeta Equivocado");
+    Console.WriteLine("");
+    Console.WriteLine("Ingrese el numero de la Tarjeta a pagar");
+    ResCorrecT = Convert.ToInt32(Console.ReadLine());
+}
 
-                 if (ResCorrecCVV == CVV);
-                 {
-                    Console.WriteLine("Ingrese el monto gastado de la tarjeta (dentro del rango de $0 a $350)");
-                    Gastodetarjeta = Convert.ToDouble(Console.ReadLine());
+if (ResCorrecT == Ntarjeta)
+{
+    Console.Clear();
+    Console.WriteLine("Ingrese el numero CVV, ubicado atras de su tarjeta");
+    ResCorrecCVV = Convert.ToInt32(Console.ReadLine());
 
-                    TarjetaRestante = Saldotarjetacredito - Gastodetarjeta;
+    while (ResCorrecCVV != CVV)
+    {
+        Console.Clear();
+        Console.WriteLine("Numero de CVV Equivocado");
+        Console.WriteLine("");
+        Console.WriteLine("Ingrese el numero CVV de la Tarjeta nuevamente");
+        ResCorrecCVV = Convert.ToInt32(Console.ReadLine());
+    }
 
-                    Console.WriteLine("El saldo restante de credito de su tarjeta es de:" + TarjetaRestante);
+    if (ResCorrecCVV == CVV) 
+    {
+        Console.Clear();
+        Console.WriteLine("Ingrese el monto gastado de la tarjeta");
+        Gastodetarjeta = Convert.ToDouble(Console.ReadLine());
+
+        while (Gastodetarjeta>Saldotarjetacredito)
+        {
+            Console.Clear();
+            Console.WriteLine("");
+            Console.WriteLine("La cantidad ingresada sobrepasa el limite de la tarjeta");
+            Console.WriteLine("");
+            Console.WriteLine("Ingrese nuevamente el monto gastado");
+            Gastodetarjeta = Convert.ToDouble(Console.ReadLine());
+        }
+
+        TarjetaRestante = Saldotarjetacredito - Gastodetarjeta;
+
+        Console.Clear();
+        Console.WriteLine("El saldo restante de credito de su tarjeta es de: $" + TarjetaRestante);
+        Console.WriteLine("");
+        Console.WriteLine("Ingrese el numero de dias en mora"); //dias en mora desde que no paga la tarjeta
+        diasdemora = Convert.ToInt32(Console.ReadLine());
+
+        if (diasdemora == 0)
+        {
+            Console.Clear();
+            Console.WriteLine("");
+            Console.WriteLine("Felicidades, ya que paga a tiempo su tarjeta, la tasa de intereses es del 0%");
+            Saldocancelar = (Intereses1 * Gastodetarjeta) + Gastodetarjeta;
+            Console.WriteLine("Por lo tanto su saldo total a cancelar es de: $" + Saldocancelar);
+            Console.WriteLine("--------------------------------");
+            Console.ReadKey();
+            Console.Clear();
+        }
+        else
+        {
+            if (diasdemora > 0 && diasdemora <= 5)
+            {
+                Console.Clear();
+                Console.WriteLine("");
+                Console.WriteLine("Por los dias de mora obtenidos, la tasa de intereses es del 3%");
+                Saldocancelar = (Intereses2 * Gastodetarjeta) + Gastodetarjeta;
+                Console.WriteLine("Por lo tanto su saldo total a cancelar es de: $" + Saldocancelar);
+                Console.WriteLine("--------------------------------");
+                Console.WriteLine("Presione Cualquier tecla para volver al menu");
+                Console.ReadKey();
+                Console.Clear();
+
+            }
+            else
+            {
+                if (diasdemora > 5 && diasdemora <= 10)
+                {
+                    Console.Clear();
                     Console.WriteLine("");
-                    Console.WriteLine("Ingrese el numero de dias en mora"); //dias en mora desde que no paga la tarjeta
-                    diasdemora = Convert.ToInt32(Console.ReadLine());
-
-                        if (diasdemora == 0)
-                        {
-                            Console.WriteLine("Felicidades, ya que paga a tiempo su tarjeta, la tasa de intereses es del 0%");
-                            Saldocancelar = (Intereses1 * Gastodetarjeta) + Gastodetarjeta;
-                            Console.WriteLine("Por lo tanto su saldo total a cancelar es de: " + Saldocancelar);
-                            Console.WriteLine("--------------------------------");
-                            Console.ReadKey();
-                            Console.Clear();
-                        }
-                        else
-                        {
-                            if (diasdemora > 0 && diasdemora <= 5)
-                            {
-                                Console.WriteLine("Por los dias de mora obtenidos, la tasa de intereses es del 3%");
-                                Saldocancelar = (Intereses2 * Gastodetarjeta) + Gastodetarjeta;
-                                Console.WriteLine("Por lo tanto su saldo total a cancelar es de: " + Saldocancelar);
-                                Console.WriteLine("--------------------------------");
-                                Console.WriteLine("Presione Cualquier tecla para volver al menu");
-                                Console.ReadKey();
-                                Console.Clear();
-
-                            }
-                            else
-                            {
-                                if (diasdemora > 5 && diasdemora <= 10)
-                                {
-                                    Console.WriteLine("Por los dias de mora obtenidos, la tasa de intereses es del 9%");
-                                    Saldocancelar = (Intereses3 * Gastodetarjeta) + Gastodetarjeta;
-                                    Console.WriteLine("Por lo tanto su saldo total a cancelar es de: " + Saldocancelar);
-                                    Console.WriteLine("--------------------------------");
-                                    Console.WriteLine("Presione Cualquier tecla para volver al menu");
-                                    Console.ReadKey();
-                                    Console.Clear();
-                                }
-                                else
-                                {
-                                    if (diasdemora > 10)
-                                    {
-                                        Console.WriteLine("Por los dias de mora obtenidos, la tasa de intereses es del 27%");
-                                        Saldocancelar = (Intereses4 * Gastodetarjeta) + Gastodetarjeta;
-                                        Console.WriteLine("Por lo tanto su saldo total a cancelar es de: " + Saldocancelar);
-                                        Console.WriteLine("--------------------------------");
-                                        Console.WriteLine("Presione Cualquier tecla para volver al menu");
-                                        Console.ReadKey();
-                                        Console.Clear();
-                                    }
-                                }
-                            }
-                        } 
-                 }
-                 
+                    Console.WriteLine("Por los dias de mora obtenidos, la tasa de intereses es del 9%");
+                    Saldocancelar = (Intereses3 * Gastodetarjeta) + Gastodetarjeta;
+                    Console.WriteLine("Por lo tanto su saldo total a cancelar es de: $" + Saldocancelar);
+                    Console.WriteLine("--------------------------------");
+                    Console.WriteLine("Presione Cualquier tecla para volver al menu");
+                    Console.ReadKey();
+                    Console.Clear();
                 }
                 else
                 {
-                    Console.WriteLine("Numero de Tarjeta Incorrecto");
-                    Console.WriteLine("Presione Cualquier tecla para volver al menu");
-                    Console.ReadKey();
-                    Console.Clear(); 
-    
-                }break;
+                    if (diasdemora > 10)
+                    {
+                        Console.Clear();
+                        Console.WriteLine("");
+                        Console.WriteLine("Por los dias de mora obtenidos, la tasa de intereses es del 27%");
+                        Saldocancelar = (Intereses4 * Gastodetarjeta) + Gastodetarjeta;
+                        Console.WriteLine("Por lo tanto su saldo total a cancelar es de: $" + Saldocancelar);
+                        Console.WriteLine("--------------------------------");
+                        Console.WriteLine("Presione Cualquier tecla para volver al menu");
+                        Console.ReadKey();
+                        Console.Clear();
+                    }
+                }
+            }
+        }
+    }
+}
+break;
                 case 6:
                     Console.WriteLine("Eliga el Banco al cual desea tranferir sus ahorro");
                     Console.WriteLine("¿Qué banco desea hacer la transferencia?");
