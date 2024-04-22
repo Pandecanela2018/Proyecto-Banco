@@ -7,19 +7,22 @@
         int  Ntarjeta = 78631320, ResCorrecT, ResCorrecCVV, CVV = 555,opcion, diasdemora, moneda;
         do  // A = funcion Principal
         {
-
-            Console.Write("Ingrese su nombre de usuario: ");
+            Console.WriteLine(" --------------------------------------------");
+            Console.WriteLine("       Ingrese su nombre de usuario: ");
+            Console.WriteLine(" --------------------------------------------");
             ResCorrecU = Console.ReadLine();
-            
-            Console.Write("Ingrese su contraseña: ");
+            Console.WriteLine(" --------------------------------------------");
+            Console.WriteLine("           Ingrese su contraseña: ");
+            Console.WriteLine(" --------------------------------------------");
             ResCorrecC = Convert.ToString(Console.ReadLine());
+            Console.WriteLine(" --------------------------------------------");
 
             if (ResCorrecC != Contraseña || ResCorrecU != Usuario) //A.1
             {
                 Console.Clear();
                 Console.WriteLine(" --------------------------------------------");
-                Console.WriteLine("|   Usuario o Contraseña es incorrecto.      |");
-                Console.WriteLine("| Ingrese nuevamente su usuario y contraseña |");
+                Console.WriteLine("    Usuario o Contraseña es incorrecto.      ");
+                Console.WriteLine("  Ingrese nuevamente su usuario y contraseña ");
                 Console.WriteLine(" --------------------------------------------");
             }//A.1
 
@@ -30,7 +33,7 @@
         {
             Console.WriteLine("Bienvenido, " + Usuario);
             Console.WriteLine("--------------------------------");
-            Console.WriteLine("| ¿En que le podemos ayudar?   |");
+            Console.WriteLine("   ¿En que le podemos ayudar?   ");
             Console.WriteLine("--------------------------------");
             Console.WriteLine("1.Depósitos a mí cuenta\r\n2.Realizar transacciones\r\n3.Retiro de cuenta\r\n4.Envío de remesas al extranjero\r\n5.Prestamos\r\n6.Transferencia a otros bancos\r\n7.Consultar saldo actual\r\n0.Salir" + "");
             opcion = Convert.ToInt32(Console.ReadLine());
@@ -60,16 +63,19 @@
                 case 2:
                     do
                     {
-                        Console.WriteLine("Ingrese la cuenta a transferir");
-                        Console.WriteLine("--------------------------------");
+                        Console.WriteLine(" --------------------------------------------");
+                        Console.WriteLine("        Ingrese la cuenta a transferir");
+                        Console.WriteLine(" --------------------------------------------");
                         cuenta = Convert.ToDouble(Console.ReadLine());
-                        Console.WriteLine("--------------------------------");
-                        Console.WriteLine("Ingrese el monto a transferir");
-                        Console.WriteLine("--------------------------------");
+                        Console.WriteLine(" --------------------------------------------");
+                        Console.WriteLine("        Ingrese el monto a transferir        ");
+                        Console.WriteLine(" --------------------------------------------");
                         monto = Convert.ToDouble(Console.ReadLine());
                         if (monto > Saldodecuenta)
                         {
+                            Console.WriteLine(" --------------------------------------------");
                             Console.WriteLine("Ingrese un monto de acuerdo a su saldo");
+                            Console.WriteLine(" --------------------------------------------");
                             Console.WriteLine("Presione cualquier tecla para continuar");
                             Console.ReadKey();
                             Console.Clear();
@@ -131,11 +137,9 @@
                                 if (Saldodecuenta < moneda)
                                 {
                                     Console.WriteLine("Saldo insuficiene para enviar esta remesa");
+                                    Console.WriteLine("Ingrese nuevamente la cantidad:");
                                     Console.WriteLine("");
-                                    Console.WriteLine("Presione cualquier tecla para continuar");
-                                    Console.ReadKey();
                                     Console.Clear();
-                                    //
                                 }
                                 else
                                 {
@@ -145,7 +149,6 @@
                                     Console.WriteLine("");
                                     Console.WriteLine("Su cantidad de cólones salvadoreños enviados es de:" + " " + monedaC);
                                     Console.WriteLine("");
-                                    Console.WriteLine("Presione cualquier tecla para continuar");
                                     Console.ReadKey();
                                     Console.Clear();
                                 }
