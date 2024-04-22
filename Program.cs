@@ -259,7 +259,7 @@
             }//B.1
 
 
-        } while (opcion != 8); //B
+        } while (opcion != 0); //B
  }   }
 
 
