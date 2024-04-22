@@ -2,9 +2,9 @@
 {
     public static void Main(string[] args)
     {
-        double Saldodecuenta = 5500, monto, cuenta, Saldotarjetacredito = 350, Gastodetarjeta, TarjetaRestante,Intereses1 = 0, Intereses2 = 0.03, Intereses3 = 0.09, Intereses4 = 0.27, Saldocancelar;// Aqui vamos a definir todo las variables que vamos a utilizar para decimales o se que este parametro son para "double" 
+        double Saldodecuenta = 5500, monto, cuenta, Saldotarjetacredito = 350, Gastodetarjeta, TarjetaRestante,Intereses1 = 0, Intereses2 = 0.03, Intereses3 = 0.09, Intereses4 = 0.27, Saldocancelar, monedaC;// Aqui vamos a definir todo las variables que vamos a utilizar para decimales o se que este parametro son para "double" 
         string Usuario = "UsuarioPrueba", bancos, ResCorrecU;
-        int Contraseña = 3885, ResCorrecC, Ntarjeta = 78631320, ResCorrecT, ResCorrecCVV, CVV = 555,opcion, diasdemora;
+        int Contraseña = 3885, ResCorrecC, Ntarjeta = 78631320, ResCorrecT, ResCorrecCVV, CVV = 555,opcion, diasdemora, moneda;
         do  // A = funcion Principal
         {
 
@@ -32,7 +32,7 @@
             Console.WriteLine("--------------------------------");
             Console.WriteLine("| ¿En que le podemos ayudar?   |");
             Console.WriteLine("--------------------------------");
-            Console.WriteLine("1.Depósitos a mí cuenta\r\n2.Realizar transacciones\r\n3.Retiro de cuenta\r\n4.Cambio de moneda\r\n5.Prestamos\r\n6.Transferencia a otros bancos\r\n0.Salir" + "");
+            Console.WriteLine("1.Depósitos a mí cuenta\r\n2.Realizar transacciones\r\n3.Retiro de cuenta\r\n4.Cambio de moneda\r\n5.Prestamos\r\n6.Transferencia a otros bancos\r\n7.Consultar saldo actual\r\n0.Salir" + "");
             opcion = Convert.ToInt32(Console.ReadLine());
             Console.Clear();
 
@@ -112,12 +112,217 @@
                     }
                     break;
                 case 4:
-                    Console.WriteLine(""); 
-                    Console.WriteLine("Ingrese ");
-                    Console.WriteLine("¿Que desea hacer?");
-                    Console.WriteLine("Presione cualquier tecla para continuar");
-                    Console.ReadKey();
-                    Console.Clear();
+                    Console.WriteLine("");
+Console.WriteLine("Seleccione la moneda extranjera con la que desea enviar la remesa:");
+Console.WriteLine("1.Colón salvadoreño\r\n2.Lempira\r\n3.Euro\r\n4.Libra Esterlina\r\n5.Quetzales\r\n6.Yen Japones\r\n7.Dólar Australiano\r\n8.Dólar Canadiense");
+moneda = Convert.ToInt32(Console.ReadLine());
+Console.Clear();
+
+switch (moneda)
+{
+    case 1:
+        Console.WriteLine("");
+        Console.WriteLine("Ingrese el número de dólares que desea enviar en cólones salvadoreños:");
+        moneda = Convert.ToInt32(Console.ReadLine());
+       
+        if (Saldodecuenta < moneda)
+        {
+            Console.WriteLine("Saldo insuficiene para enviar esta remesa");
+            Console.WriteLine("");
+            Console.WriteLine("Presione cualquier tecla para continuar");
+            Console.ReadKey();
+            Console.Clear();
+        }
+        else
+        {
+            Saldodecuenta = Saldodecuenta - moneda;
+            monedaC = moneda * (8.73);
+
+            Console.WriteLine("");
+            Console.WriteLine("Su cantidad de cólones salvadoreños enviados es de:" + " " + monedaC);
+            Console.WriteLine("");
+            Console.WriteLine("Presione cualquier tecla para continuar");
+            Console.ReadKey();
+            Console.Clear();
+        }
+                                   
+        break;
+    case 2:
+        Console.WriteLine("");
+        Console.WriteLine("Ingrese el número de dólares que desea enviar en lempiras:");
+        moneda = Convert.ToInt32(Console.ReadLine());
+
+        if (Saldodecuenta < moneda)
+        {
+            Console.WriteLine("Saldo insuficiene para enviar esta remesa");
+            Console.WriteLine("Presione cualquier tecla para continuar");
+            Console.ReadKey();
+            Console.Clear();
+        }
+        else
+        {
+            Saldodecuenta = Saldodecuenta - moneda;
+            monedaC = moneda * (24.63);
+
+            Console.WriteLine("");
+            Console.WriteLine("Su cantidad de lempiras enviados es de" + " " + monedaC);
+            Console.WriteLine("");
+            Console.WriteLine("Presione cualquier tecla para continuar");
+            Console.ReadKey();
+            Console.Clear();
+        }
+        break;
+    case 3:
+        Console.WriteLine("");
+        Console.WriteLine("Ingrese el número de dólares que desea enviar en euros:");
+        moneda = Convert.ToInt32(Console.ReadLine());
+
+        if (Saldodecuenta < moneda)
+        {
+            Console.WriteLine("Saldo insuficiene para enviar esta remesa");
+            Console.WriteLine("Presione cualquier tecla para continuar");
+            Console.ReadKey();
+            Console.Clear();
+        }
+        else
+        {
+            Saldodecuenta = Saldodecuenta - moneda;
+            monedaC = moneda * (0.94);
+
+            Console.WriteLine("");
+            Console.WriteLine("Su cantidad de euros enviados es de" + " " + monedaC);
+            Console.WriteLine("");
+            Console.WriteLine("Presione cualquier tecla para continuar");
+            Console.ReadKey();
+            Console.Clear();
+        }
+        break;
+    case 4:
+        Console.WriteLine("");
+        Console.WriteLine("Ingrese el número de dólares que desea enviar en libras esterlinas:");
+        moneda = Convert.ToInt32(Console.ReadLine());
+
+        if (Saldodecuenta < moneda)
+        {
+            Console.WriteLine("Saldo insuficiene para realizar esta remesa");
+            Console.WriteLine("Presione cualquier tecla para continuar");
+            Console.ReadKey();
+            Console.Clear();
+        }
+        else
+        {
+            Saldodecuenta = Saldodecuenta - moneda;
+            monedaC = moneda * (0.81);
+
+            Console.WriteLine("");
+            Console.WriteLine("Su cantidad de libras esterlinas enviadas es de" + " " + monedaC);
+            Console.WriteLine("");
+            Console.WriteLine("Presione cualquier tecla para continuar");
+            Console.ReadKey();
+            Console.Clear();
+        }
+        break;
+    case 5:
+        Console.WriteLine("");
+        Console.WriteLine("Ingrese el número de dólares que desea enviar en quetzales:");
+        moneda = Convert.ToInt32(Console.ReadLine());
+
+        if (Saldodecuenta < moneda)
+        {
+            Console.WriteLine("Saldo insuficiene para realizar esta remesa");
+            Console.WriteLine("Presione cualquier tecla para continuar");
+            Console.ReadKey();
+            Console.Clear();
+        }
+        else
+        {
+            Saldodecuenta = Saldodecuenta - moneda;
+            monedaC = moneda * (7.76);
+
+            Console.WriteLine("");
+            Console.WriteLine("Su cantidad de quetzales enviados es de" + " " + monedaC);
+            Console.WriteLine("");
+            Console.WriteLine("Presione cualquier tecla para continuar");
+            Console.ReadKey();
+            Console.Clear();
+        }
+        break;
+    case 6:
+        Console.WriteLine("");
+        Console.WriteLine("Ingrese el número de dólares que desea enviar en yenes japoneses:");
+        moneda = Convert.ToInt32(Console.ReadLine());
+
+        if (Saldodecuenta < moneda)
+        {
+            Console.WriteLine("Saldo insuficiene para realizar esta remesa");
+            Console.WriteLine("Presione cualquier tecla para continuar");
+            Console.ReadKey();
+            Console.Clear();
+        }
+        else
+        {
+            Saldodecuenta = Saldodecuenta - moneda;
+            monedaC = moneda * (154.62);
+
+            Console.WriteLine("");
+            Console.WriteLine("Su cantidad de yenes japoneses enviados es de" + " " + monedaC);
+            Console.WriteLine("");
+            Console.WriteLine("Presione cualquier tecla para continuar");
+            Console.ReadKey();
+            Console.Clear();
+        }
+        break;
+    case 7:
+        Console.WriteLine("");
+        Console.WriteLine("Ingrese el número de dólares que desea enviar en dólares australianos:");
+        moneda = Convert.ToInt32(Console.ReadLine());
+
+        if (Saldodecuenta < moneda)
+        {
+            Console.WriteLine("Saldo insuficiene para realizar esta remesa");
+            Console.WriteLine("Presione cualquier tecla para continuar");
+            Console.ReadKey();
+            Console.Clear();
+        }
+        else
+        {
+            Saldodecuenta = Saldodecuenta - moneda;
+            monedaC = moneda * (1.56);
+
+            Console.WriteLine("");
+            Console.WriteLine("Su cantidad de dólares australianos enviados es de" + " " + monedaC);
+            Console.WriteLine("");
+            Console.WriteLine("Presione cualquier tecla para continuar");
+            Console.ReadKey();
+            Console.Clear();
+        }
+        break;
+    case 8:
+        Console.WriteLine("");
+        Console.WriteLine("Ingrese el número de dólares que desea enviar en dólares canadienses:");
+        moneda = Convert.ToInt32(Console.ReadLine());
+
+        if (Saldodecuenta < moneda)
+        {
+            Console.WriteLine("Saldo insuficiene para realizar esta remesa");
+            Console.WriteLine("Presione cualquier tecla para continuar");
+            Console.ReadKey();
+            Console.Clear();
+        }
+        else
+        {
+            Saldodecuenta = Saldodecuenta - moneda;
+            monedaC = moneda * (1.38);
+
+            Console.WriteLine("");
+            Console.WriteLine("Su cantidad de dólares canadienses enviados es de" + " " + monedaC);
+            Console.WriteLine("");
+            Console.WriteLine("Presione cualquier tecla para continuar");
+            Console.ReadKey();
+            Console.Clear();
+        }
+        break;
+}
                     break;
                 case 5:
                  Console.WriteLine("");
@@ -253,7 +458,16 @@
                         break;
                     }
                     break;
+                case 7: 
+                    Console.WriteLine("Su saldo actual es de:");
+                    Console.WriteLine(Saldodecuenta + " " + "dólares");
+                    Console.WriteLine("");
+                    Console.WriteLine("Presione cualquier tecla para continuar");
+                    Console.ReadKey();
+                    Console.Clear();
+                    break;
                 case 0:
+                
                     Console.WriteLine("Muchas gracias por utilizar el banco.");
                  break;
             }//B.1
