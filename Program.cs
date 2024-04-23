@@ -41,7 +41,7 @@
 
             switch (opcion) //B.1
             {
-                //jeje
+                //jejee
                 case 1:
                     Console.WriteLine(" --------------------------------------------");
                     Console.WriteLine("Ingrese el monto a ingresar:");
