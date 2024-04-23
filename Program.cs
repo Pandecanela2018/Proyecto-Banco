@@ -2,7 +2,7 @@
 {
     public static void Main(string[] args)
     {
-        double Saldodecuenta = 5500, monto, cuenta, Saldotarjetacredito = 350, Gastodetarjeta, TarjetaRestante,Intereses1 = 0, Intereses2 = 0.03, Intereses3 = 0.09, Intereses4 = 0.27, Saldocancelar, monedaC;// Aqui vamos a definir todo las variables que vamos a utilizar para decimales o se que este parametro son para "double" 
+        double Saldodecuenta = 5500, monto, cuenta, Saldotarjetacredito = 350, Gastodetarjeta, TarjetaRestante,Intereses1 = 0, Intereses2 = 0.03, Intereses3 = 0.09, Intereses4 = 0.27, Saldocancelar, monedaC, remesaR;// Aqui vamos a definir todo las variables que vamos a utilizar para decimales o se que este parametro son para "double" 
         string Usuario = "UsuarioPrueba", bancos, ResCorrecU, ResCorrecC, Contraseña = "3885";
         int  Ntarjeta = 78631320, ResCorrecT, ResCorrecCVV, CVV = 555,opcion, diasdemora, moneda;
         do  // A = funcion Principal
@@ -138,10 +138,10 @@
                     Console.WriteLine("1.Colón salvadoreño\r\n2.Lempira\r\n3.Euro\r\n4.Libra Esterlina\r\n5.Quetzales\r\n6.Yen Japones\r\n7.Dólar Australiano\r\n8.Dólar Canadiense");
                     moneda = Convert.ToInt32(Console.ReadLine());
                     Console.Clear();
-
                     switch (moneda)
                     {
                         case 1:
+
 
                             do
                             {
@@ -167,7 +167,7 @@
 
                                     Console.WriteLine("");
                                     Console.WriteLine("-------------------------------------------------------------");
-                                    Console.WriteLine("      Su cantidad de cólones salvadoreños enviados es de:   " + " " +  monedaC);
+                                    Console.WriteLine("      Su cantidad de cólones salvadoreños enviados es de:   " + " " + monedaC);
                                     Console.WriteLine("-------------------------------------------------------------");
                                     Console.WriteLine("");
                                     Console.ReadKey();
@@ -639,6 +639,7 @@
                             break;
                     }
                     break;
+
                 case 7:
                     Console.WriteLine("----------------------------------------------------");
                     Console.WriteLine("                Su saldo actual es de:              ");
