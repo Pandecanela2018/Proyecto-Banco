@@ -35,7 +35,7 @@
             Console.WriteLine(" --------------------------------------------");
             Console.WriteLine("         ¿En que le podemos ayudar?          ");
             Console.WriteLine(" --------------------------------------------");
-            Console.WriteLine("1.Depósitos a mí cuenta\r\n2.Realizar transacciones\r\n3.Retiro de cuenta\r\n4.Envío de remesas al extranjero\r\n5.Prestamos\r\n6.Transferencia a otros bancos\r\n7.Consultar saldo actual\r\n0.Salir" + "");
+            Console.WriteLine("1.Depósitos a mí cuenta\r\n2.Realizar transacciones\r\n3.Retiro de cuenta\r\n4.Envío de remesas al extranjero\r\n5.Pago de tarjeta de credito\r\n6.Transferencia a otros bancos\r\n7.Consultar saldo actual\r\n0.Salir" + "");
             opcion = Convert.ToInt32(Console.ReadLine());
             Console.Clear();
 
