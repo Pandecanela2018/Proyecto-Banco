@@ -1,10 +1,12 @@
-﻿class BANCO
+﻿using System.Security.Cryptography;
+
+class BANCO
 {
     public static void Main(string[] args)
     {
-        double Saldodecuenta = 5500, monto, cuenta, Saldotarjetacredito = 350, Gastodetarjeta, TarjetaRestante, Intereses1 = 0, Intereses2 = 0.03, Intereses3 = 0.09, Intereses4 = 0.27, Saldocancelar, monedaC, remesaR;// Aqui vamos a definir todo las variables que vamos a utilizar para decimales o se que este parametro son para "double" 
-        string Usuario = "UsuarioPrueba", bancos, ResCorrecU, ResCorrecC, Contraseña = "3885";
-        int Ntarjeta = 78631320, ResCorrecT, ResCorrecCVV, CVV = 555, opcion, diasdemora, moneda;
+        double Saldodecuenta = 5500, monto, cuenta, Saldotarjetacredito = 350, Gastodetarjeta, TarjetaRestante, Intereses1 = 0, Intereses2 = 0.03, Intereses3 = 0.09, Intereses4 = 0.27, Saldocancelar, monedaC, remesaR, Pago;
+        string Usuario = "UsuarioPrueba",  ResCorrecU, ResCorrecC, Contraseña = "3885";
+        int Ntarjeta = 78631320, ResCorrecT, ResCorrecCVV, CVV = 555, opcion, diasdemora, bancos, moneda;
         do  // A = funcion Principal
         {
             Console.WriteLine(" --------------------------------------------");
@@ -35,77 +37,13 @@
             Console.WriteLine(" --------------------------------------------");
             Console.WriteLine("         ¿En que le podemos ayudar?          ");
             Console.WriteLine(" --------------------------------------------");
-            Console.WriteLine("1.Depósitos a mí cuenta\r\n2.Realizar transacciones\r\n3.Retiro de cuenta\r\n4.Envío de remesas al extranjero\r\n5.Pago de tarjeta de credito\r\n6.Transferencia a otros bancos\r\n7.Consultar saldo actual\r\n0.Salir" + "");
+            Console.WriteLine("1.Enviar Remesa.\r\n2.Pago de tarjeta.\r\n3.Transferencia de banco a banco. \r\n4.Consulta de saldo. \r\n5.Deposito a la cuenta.\r\n\r\n0.Salir" + "");
             opcion = Convert.ToInt32(Console.ReadLine());
             Console.Clear();
 
             switch (opcion) //B.1
             {
                 case 1:
-                    do
-                    {
-                        Console.WriteLine(" --------------------------------------------");
-                        Console.WriteLine("        Ingrese la cuenta a transferir");
-                        Console.WriteLine(" --------------------------------------------");
-                        cuenta = Convert.ToDouble(Console.ReadLine());
-                        Console.WriteLine(" --------------------------------------------");
-                        Console.WriteLine("        Ingrese el monto a transferir        ");
-                        Console.WriteLine(" --------------------------------------------");
-                        monto = Convert.ToDouble(Console.ReadLine());
-                        if (monto > Saldodecuenta)
-                        {
-                            Console.WriteLine(" --------------------------------------------");
-                            Console.WriteLine("    Ingrese un monto de acuerdo a su saldo   ");
-                            Console.WriteLine(" --------------------------------------------");
-                            Console.WriteLine("   Presione cualquier tecla para continuar   ");
-                            Console.WriteLine(" --------------------------------------------");
-                            Console.ReadKey();
-                            Console.Clear();
-                        }
-                    } while (monto > Saldodecuenta);
-
-                    Saldodecuenta = (Saldodecuenta - monto);
-                    Console.WriteLine(" --------------------------------------------");
-                    Console.WriteLine("          La transacción fue exitosa         ");
-                    Console.WriteLine(" --------------------------------------------");
-                    Console.WriteLine("        El monto a transferir: ${0}          ", monto);
-                    Console.WriteLine(" --------------------------------------------");
-                    Console.WriteLine("      Cuenta de transferencia: {0} ", cuenta);
-                    Console.WriteLine(" --------------------------------------------");
-                    Console.WriteLine("           Su saldo es de : ${0}             ", Saldodecuenta);
-                    Console.WriteLine(" --------------------------------------------");
-                    Console.WriteLine("Presione cualquier tecla");
-                    Console.ReadKey();
-                    Console.Clear();
-
-                    break;
-              
-                    Console.WriteLine(" --------------------------------------------");
-                    Console.WriteLine("           Ingrese el monto a retirar        ");
-                    Console.WriteLine(" --------------------------------------------");
-                    monto = Convert.ToDouble(Console.ReadLine());
-                    if (monto > Saldodecuenta)
-                    {
-                        Console.WriteLine(" ------------------------------------------------------------------------------------");
-                        Console.WriteLine("Ingrese el monto a retirar correctamente, debe de ser menor o igual a su saldo  ${0} ", Saldodecuenta);
-                        Console.WriteLine(" ------------------------------------------------------------------------------------");
-                        Console.Clear();
-                    }
-                    else
-                    {
-                        Saldodecuenta = Saldodecuenta - monto;
-                        Console.WriteLine(" --------------------------------------------");
-                        Console.WriteLine("        El monto a retirar es de ${0}        ", monto);
-                        Console.WriteLine(" --------------------------------------------");
-                        Console.WriteLine("           Su saldo actual es ${0}           ", Saldodecuenta);
-                        Console.WriteLine(" --------------------------------------------");
-                        Console.WriteLine("    Presione cualquier tecla para continuar  ");
-                        Console.ReadKey();
-                        Console.Clear();
-
-                    }
-                    break;
-                case 3:
                     Console.WriteLine("");
                     Console.WriteLine(" ---------------------------------------------------------------------------");
                     Console.WriteLine("      Seleccione la moneda extranjera con la que desea enviar la remesa:    ");
@@ -428,8 +366,8 @@
                             break;
                     }
 
-                    break;
-                case 4:
+                break;
+                case 2:
                     Console.WriteLine("");
                     Console.WriteLine("---------------------------------------");
                     Console.WriteLine("Ingrese el numero de la Tarjeta a pagar");
@@ -509,6 +447,9 @@
                                 Saldocancelar = (Intereses1 * Gastodetarjeta) + Gastodetarjeta;
                                 Console.WriteLine("Por lo tanto su saldo total a cancelar es de: $" + Saldocancelar);
                                 Console.WriteLine("----------------------------------------------------------------------------");
+                                Pago = TarjetaRestante-Saldocancelar;
+                                Console.WriteLine("El saldo restante de credito de su tarjeta es de: $" + Pago);
+                                Console.WriteLine("----------------------------------------------------------------------------");
                                 Console.ReadKey();
                                 Console.Clear();
                             }
@@ -524,6 +465,11 @@
                                     Saldocancelar = (Intereses2 * Gastodetarjeta) + Gastodetarjeta;
                                     Console.WriteLine("Por lo tanto su saldo total a cancelar es de: $" + Saldocancelar);
                                     Console.WriteLine("--------------------------------------------------------------");
+                                    Console.WriteLine("Presione enter para pagar");
+                                    Console.ReadKey();
+                                    Pago = TarjetaRestante - Saldocancelar;
+                                    Console.WriteLine("El saldo restante de credito de su tarjeta es de: $" + Pago);
+                                    Console.WriteLine("----------------------------------------------------------------------------");
                                     Console.WriteLine("Presione Cualquier tecla para volver al menu");
                                     Console.ReadKey();
                                     Console.Clear();
@@ -541,6 +487,12 @@
                                         Saldocancelar = (Intereses3 * Gastodetarjeta) + Gastodetarjeta;
                                         Console.WriteLine("Por lo tanto su saldo total a cancelar es de: $" + Saldocancelar);
                                         Console.WriteLine("--------------------------------------------------------------");
+                                        Console.WriteLine("Presione enter para pagar");
+                                        Console.ReadKey();
+                                        Console.WriteLine("----------------------------------------------------------------------------");
+                                        Pago = TarjetaRestante - Saldocancelar;
+                                        Console.WriteLine("El saldo restante de credito de su tarjeta es de: $" + Pago);
+                                        Console.WriteLine("----------------------------------------------------------------------------");
                                         Console.WriteLine("Presione Cualquier tecla para volver al menu");
                                         Console.ReadKey();
                                         Console.Clear();
@@ -557,6 +509,12 @@
                                             Saldocancelar = (Intereses4 * Gastodetarjeta) + Gastodetarjeta;
                                             Console.WriteLine("Por lo tanto su saldo total a cancelar es de: $" + Saldocancelar);
                                             Console.WriteLine("---------------------------------------------------------------");
+                                            Console.WriteLine("Presione enter para pagar");
+                                            Console.ReadKey();
+                                            Console.WriteLine("----------------------------------------------------------------------------");
+                                            Pago = TarjetaRestante - Saldocancelar;
+                                            Console.WriteLine("El saldo restante de credito de su tarjeta es de: $" + Pago);
+                                            Console.WriteLine("----------------------------------------------------------------------------");
                                             Console.WriteLine("Presione Cualquier tecla para volver al menu");
                                             Console.ReadKey();
                                             Console.Clear();
@@ -566,20 +524,20 @@
                             }
                         }
                     }
-                    break;
-                case 5:
+                break;
+                case 3:
                     Console.WriteLine("-------------------------------------------------");
-                    Console.WriteLine("Eliga el Banco al cual desea tranferir sus ahorro");
+                    Console.WriteLine("      Eliga el Banco al cual desea tranferir     ");
                     Console.WriteLine("-------------------------------------------------");
                     Console.WriteLine("     ¿Qué banco desea hacer la transferencia?    ");
                     Console.WriteLine("-------------------------------------------------");
                     Console.WriteLine("     1.Davivienda 2.Cuscatlan 3.Hipotecario" + " ");
                     Console.WriteLine("-------------------------------------------------");
-                    bancos = Console.ReadLine();
+                    bancos = Convert.ToInt32(Console.ReadLine());
                     Console.Clear();
-                    switch (bancos.ToLower())
+                    switch (bancos)
                     {
-                        case "davivienda":
+                        case 1:
                             Console.WriteLine("-------------------------------------------------");
                             Console.WriteLine("            Gracias Por elegir a Davivienda      ");
                             Console.WriteLine("-------------------------------------------------");
@@ -591,7 +549,7 @@
                             if (Saldodecuenta < costo_descueto)
                             {
                                 Console.WriteLine("----------------------------------------------------");
-                                Console.WriteLine(" Saldo insuficiene para realizar esta transferencua ");
+                                Console.WriteLine(" Saldo insuficiene para realizar esta transferencia ");
                                 Console.WriteLine("----------------------------------------------------");
                                 Console.WriteLine("Presione cualquier tecla para continuar");
                                 Console.ReadKey();
@@ -610,7 +568,7 @@
                                 Console.Clear();
                             }
                             break;
-                        case "cuscatlan":
+                        case 2:
                             Console.WriteLine("----------------------------------------------------");
                             Console.WriteLine("            Gracias Por elegir a Cusclatan          ");
                             Console.WriteLine("----------------------------------------------------");
@@ -622,7 +580,7 @@
                             if (Saldodecuenta < costo2_descueto)
                             {
                                 Console.WriteLine("----------------------------------------------------");
-                                Console.WriteLine(" Saldo insuficiene para realizar esta transferencua ");
+                                Console.WriteLine(" Saldo insuficiene para realizar esta transferencia ");
                                 Console.WriteLine("----------------------------------------------------");
                                 Console.WriteLine("Presione cualquier tecla para continuar");
                                 Console.ReadKey();
@@ -641,7 +599,7 @@
 
                             }
                             break;
-                        case "hipotecario":
+                        case 3:
                             Console.WriteLine("----------------------------------------------------");
                             Console.WriteLine("            Gracias Por elegir a Hipotecario        ");
                             Console.WriteLine("----------------------------------------------------");
@@ -652,7 +610,7 @@
                             Saldodecuenta = (Saldodecuenta - costo3_descueto);
                             if (Saldodecuenta < costo3_descueto)
                             {
-                                Console.WriteLine(" Saldo insuficiene para realizar esta transferencua ");
+                                Console.WriteLine(" Saldo insuficiene para realizar esta transferencia ");
                                 Console.WriteLine("----------------------------------------------------");
                                 Console.WriteLine("Presione cualquier tecla para continuar");
                                 Console.ReadKey();
@@ -673,9 +631,9 @@
 
                             break;
                     }
-                    break;
+               break;
 
-                case 6:
+                case 4:
                     Console.WriteLine("----------------------------------------------------");
                     Console.WriteLine("                Su saldo actual es de:              ");
                     Console.WriteLine("----------------------------------------------------");
@@ -686,6 +644,20 @@
                     Console.ReadKey();
                     Console.Clear();
                     break;
+                case 5:
+                    Console.WriteLine(" --------------------------------------------");
+                    Console.WriteLine("           Ingrese el monto a ingresar:      ");
+                    Console.WriteLine(" --------------------------------------------");
+                    int Montoaingresar = Convert.ToInt32(Console.ReadLine());
+                    Saldodecuenta = Saldodecuenta + Montoaingresar;
+                    Console.WriteLine(" --------------------------------------------");
+                    Console.WriteLine("           Su saldo actual es de ${0}        ", Saldodecuenta);
+                    Console.WriteLine(" --------------------------------------------");
+                    Console.WriteLine("Presione cualquier tecla");
+                    Console.ReadKey();
+                    Console.Clear();
+                    break;
+
                 case 0:
                     Console.WriteLine("----------------------------------------------------");
                     Console.WriteLine("        Muchas gracias por utilizar el Banco.       ");
