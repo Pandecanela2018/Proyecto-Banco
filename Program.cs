@@ -41,32 +41,7 @@
 
             switch (opcion) //B.1
             {
-                //jejee
                 case 1:
-                    Console.WriteLine(" --------------------------------------------");
-                    Console.WriteLine("Ingrese el monto a ingresar:");
-                    Console.WriteLine(" --------------------------------------------");
-                    int Montoaingresar = Convert.ToInt32(Console.ReadLine());
-                    if (Montoaingresar > Saldodecuenta)
-                    {
-                        Console.WriteLine(" --------------------------------------------");
-                        Console.WriteLine("               Saldo insuficiente            ");
-                        Console.WriteLine(" --------------------------------------------");
-                        Console.WriteLine("  Ingrese la cantidad de acuerdo a su saldo  ");
-                        Console.WriteLine(" --------------------------------------------");
-                        Console.ReadKey();
-                        Console.Clear();
-                    }
-                    Saldodecuenta = Saldodecuenta + Montoaingresar;
-                    Console.WriteLine(" --------------------------------------------");
-                    Console.WriteLine("           Su saldo actual es de ${0}        ", Saldodecuenta);
-                    Console.WriteLine(" --------------------------------------------");
-                    Console.WriteLine("Presione cualquier tecla");
-                    Console.ReadKey();
-                    Console.Clear();
-                    break;
-
-                case 2:
                     do
                     {
                         Console.WriteLine(" --------------------------------------------");
@@ -104,7 +79,7 @@
                     Console.Clear();
 
                     break;
-                case 3:
+              
                     Console.WriteLine(" --------------------------------------------");
                     Console.WriteLine("           Ingrese el monto a retirar        ");
                     Console.WriteLine(" --------------------------------------------");
@@ -130,7 +105,7 @@
 
                     }
                     break;
-                case 4:
+                case 3:
                     Console.WriteLine("");
                     Console.WriteLine(" ---------------------------------------------------------------------------");
                     Console.WriteLine("      Seleccione la moneda extranjera con la que desea enviar la remesa:    ");
@@ -454,7 +429,7 @@
                     }
 
                     break;
-                case 5:
+                case 4:
                     Console.WriteLine("");
                     Console.WriteLine("---------------------------------------");
                     Console.WriteLine("Ingrese el numero de la Tarjeta a pagar");
@@ -592,7 +567,7 @@
                         }
                     }
                     break;
-                case 6:
+                case 5:
                     Console.WriteLine("-------------------------------------------------");
                     Console.WriteLine("Eliga el Banco al cual desea tranferir sus ahorro");
                     Console.WriteLine("-------------------------------------------------");
@@ -700,7 +675,7 @@
                     }
                     break;
 
-                case 7:
+                case 6:
                     Console.WriteLine("----------------------------------------------------");
                     Console.WriteLine("                Su saldo actual es de:              ");
                     Console.WriteLine("----------------------------------------------------");
