@@ -1,5 +1,4 @@
 ﻿using System.Security.Cryptography;
-
 class BANCOoficial
 {
     public static void Main(string[] args)
@@ -13,7 +12,7 @@ class BANCOoficial
             {
                 key = Console.ReadKey(true);
 
-               
+
                 if (key.Key != ConsoleKey.Backspace && key.Key != ConsoleKey.Enter)
                 {
                     password += key.KeyChar;
@@ -30,7 +29,7 @@ class BANCOoficial
             return password;
         }//A
         double Saldodecuenta = 5500, monto, cuenta, Saldotarjetacredito = 350, Gastodetarjeta, TarjetaRestante, Intereses1 = 0, Intereses2 = 0.03, Intereses3 = 0.09, Intereses4 = 0.27, Saldocancelar, monedaC, remesaR, Pago;
-        string Usuario = "UsuarioPrueba",  ResCorrecU, ResCorrecC, Contraseña = "3885";
+        string Usuario = "UsuarioPrueba", ResCorrecU, ResCorrecC, Contraseña = "3885";
         int Ntarjeta = 78631320, ResCorrecT, ResCorrecCVV, CVV = 555, opcion, diasdemora, bancos, moneda;
         do  // B = funcion Principal
         {
@@ -390,7 +389,7 @@ class BANCOoficial
                             break;
                     }
 
-                break;
+                    break;
                 case 2:
                     Console.WriteLine("");
                     Console.WriteLine("---------------------------------------");
@@ -471,7 +470,7 @@ class BANCOoficial
                                 Saldocancelar = (Intereses1 * Gastodetarjeta) + Gastodetarjeta;
                                 Console.WriteLine("Por lo tanto su saldo total a cancelar es de: $" + Saldocancelar);
                                 Console.WriteLine("----------------------------------------------------------------------------");
-                                Pago = TarjetaRestante-Saldocancelar;
+                                Pago = TarjetaRestante - Saldocancelar;
                                 Console.WriteLine("El saldo restante de credito de su tarjeta es de: $" + Pago);
                                 Console.WriteLine("----------------------------------------------------------------------------");
                                 Console.ReadKey();
@@ -548,7 +547,7 @@ class BANCOoficial
                             }
                         }
                     }
-                break;
+                    break;
                 case 3:
                     Console.WriteLine("-------------------------------------------------");
                     Console.WriteLine("      Eliga el Banco al cual desea tranferir     ");
@@ -655,7 +654,7 @@ class BANCOoficial
 
                             break;
                     }
-               break;
+                    break;
 
                 case 4:
                     Console.WriteLine("----------------------------------------------------");
@@ -693,6 +692,7 @@ class BANCOoficial
         } while (opcion != 0); //C
     }
 }
+
 
 
 
