@@ -551,7 +551,7 @@ class BANCO
                                 Console.WriteLine("----------------------------------------------------");
                                 Console.WriteLine(" Saldo insuficiene para realizar esta transferencia ");
                                 Console.WriteLine("----------------------------------------------------");
-                                Console.WriteLine("Presione cualquier tecla para continuar");
+                                Console.WriteLine("Presione cualquier tecla para regresar a la barra de opciones original");
                                 Console.ReadKey();
                                 Console.Clear();
                             }
@@ -582,7 +582,7 @@ class BANCO
                                 Console.WriteLine("----------------------------------------------------");
                                 Console.WriteLine(" Saldo insuficiene para realizar esta transferencia ");
                                 Console.WriteLine("----------------------------------------------------");
-                                Console.WriteLine("Presione cualquier tecla para continuar");
+                                Console.WriteLine("Presione cualquier tecla para regresar a la barra opciones originales");
                                 Console.ReadKey();
                                 Console.Clear();
                             }
@@ -612,7 +612,7 @@ class BANCO
                             {
                                 Console.WriteLine(" Saldo insuficiene para realizar esta transferencia ");
                                 Console.WriteLine("----------------------------------------------------");
-                                Console.WriteLine("Presione cualquier tecla para continuar");
+                                Console.WriteLine("Presione cualquier tecla para regresar a la barra opciones originales");
                                 Console.ReadKey();
                                 Console.Clear();
                             }
