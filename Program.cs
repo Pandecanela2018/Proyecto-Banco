@@ -28,7 +28,7 @@
             Console.WriteLine();
             return password;
         }
-        double Saldodecuenta = 5500, monto, cuenta, Saldotarjetacredito = 350, Gastodetarjeta, TarjetaRestante, Intereses1 = 0, Intereses2 = 0.03, Intereses3 = 0.09, Intereses4 = 0.27, Saldocancelar, monedaC, remesaR, Pago;
+        double Saldodecuenta = 5500, monto, cuenta, Saldotarjetacredito = 565, Gastodetarjeta, TarjetaRestante, Intereses1 = 0, Intereses2 = 0.03, Intereses3 = 0.09, Intereses4 = 0.27, Saldocancelar, monedaC, remesaR, Pago;
         string Usuario = "UsuarioPrueba", ResCorrecU, ResCorrecC, Contraseña = "3885";
         int Ntarjeta = 78631320, ResCorrecT, ResCorrecCVV, CVV = 555, opcion, diasdemora, bancos, moneda;
         do  // A = funcion Principald
@@ -547,21 +547,7 @@
                             }
                         }
                     }
-                    break;
-                case 3:
-                    Console.WriteLine("-------------------------------------------------");
-                    Console.WriteLine("      Eliga el Banco al cual desea tranferir     ");
-                    Console.WriteLine("-------------------------------------------------");
-                    Console.WriteLine("     ¿Qué banco desea hacer la transferencia?    ");
-                    Console.WriteLine("-------------------------------------------------");
-                    Console.WriteLine("     1.Davivienda 2.Cuscatlan 3.Hipotecario" + " ");
-                    Console.WriteLine("-------------------------------------------------");
-                    bancos = Convert.ToInt32(Console.ReadLine());
-                    Console.Clear();
-                    switch (bancos)
-                    {
-                      
-
+                    break; 
                 case 4:
                     Console.WriteLine("----------------------------------------------------");
                     Console.WriteLine("                Su saldo actual es de:              ");
