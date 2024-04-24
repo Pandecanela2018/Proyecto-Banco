@@ -4,16 +4,16 @@ class BANCOoficial
 {
     public static void Main(string[] args)
     {
-        static string ReadPassword()
+        static string ContraseñaOCulta()//A
         {
             string password = "";
             ConsoleKeyInfo key;
 
-            do
+            do//A.1
             {
                 key = Console.ReadKey(true);
 
-                // Solo agrega caracteres a la contraseña si no es una tecla de control
+               
                 if (key.Key != ConsoleKey.Backspace && key.Key != ConsoleKey.Enter)
                 {
                     password += key.KeyChar;
@@ -24,15 +24,15 @@ class BANCOoficial
                     password = password.Remove(password.Length - 1);
                     Console.Write("\b \b");
                 }
-            } while (key.Key != ConsoleKey.Enter);
+            } while (key.Key != ConsoleKey.Enter);//A.1
 
             Console.WriteLine();
             return password;
-        }
+        }//A
         double Saldodecuenta = 5500, monto, cuenta, Saldotarjetacredito = 350, Gastodetarjeta, TarjetaRestante, Intereses1 = 0, Intereses2 = 0.03, Intereses3 = 0.09, Intereses4 = 0.27, Saldocancelar, monedaC, remesaR, Pago;
         string Usuario = "UsuarioPrueba",  ResCorrecU, ResCorrecC, Contraseña = "3885";
         int Ntarjeta = 78631320, ResCorrecT, ResCorrecCVV, CVV = 555, opcion, diasdemora, bancos, moneda;
-        do  // A = funcion Principal
+        do  // B = funcion Principal
         {
             Console.WriteLine(" --------------------------------------------");
             Console.WriteLine("       Ingrese su nombre de usuario: ");
@@ -41,21 +41,21 @@ class BANCOoficial
             Console.WriteLine(" --------------------------------------------");
             Console.WriteLine("           Ingrese su contraseña: ");
             Console.WriteLine(" --------------------------------------------");
-            ResCorrecC = ReadPassword();
+            ResCorrecC = ContraseñaOCulta();
 
-            if (ResCorrecC != Contraseña || ResCorrecU != Usuario) //A.1
+            if (ResCorrecC != Contraseña || ResCorrecU != Usuario) //B.1
             {
                 Console.Clear();
                 Console.WriteLine(" --------------------------------------------");
                 Console.WriteLine("    Usuario o Contraseña es incorrecto.      ");
                 Console.WriteLine("  Ingrese nuevamente su usuario y contraseña ");
                 Console.WriteLine(" --------------------------------------------");
-            }//A.1
+            }//B.1
 
         } while (ResCorrecU != Usuario && ResCorrecC != Contraseña || ResCorrecC == Contraseña && ResCorrecU != Usuario || ResCorrecC != Contraseña && ResCorrecU == Usuario);// A
         Console.Clear();
 
-        do //B = funcion principal
+        do //C = funcion principal
         {
             Console.WriteLine("Bienvenido, " + Usuario);
             Console.WriteLine(" --------------------------------------------");
@@ -65,7 +65,7 @@ class BANCOoficial
             opcion = Convert.ToInt32(Console.ReadLine());
             Console.Clear();
 
-            switch (opcion) //B.1
+            switch (opcion) //C.1
             {
                 case 1:
                     Console.WriteLine("");
@@ -93,7 +93,7 @@ class BANCOoficial
                                     Console.WriteLine("");
                                     Console.WriteLine("Saldo insuficiene para enviar esta remesa");
                                     Console.WriteLine("");
-                                    Console.WriteLine("Presione cualquier tecla para continuar");
+                                    Console.WriteLine("Presione cualquier tecla para regresar al menú");
                                     Console.ReadKey();
                                     Console.Clear();
 
@@ -110,7 +110,7 @@ class BANCOoficial
                                     Console.WriteLine("Remesa enviada a la cuenta:" + " " + remesaR + "                           ");
                                     Console.WriteLine("-------------------------------------------------------------");
                                     Console.WriteLine("");
-                                    Console.WriteLine("Presione cualquier tecla para continuar");
+                                    Console.WriteLine("Presione cualquier tecla para regresar al menú");
                                     Console.ReadKey();
                                     Console.Clear();
                                 }
@@ -133,7 +133,7 @@ class BANCOoficial
                                     Console.WriteLine("");
                                     Console.WriteLine("Saldo insuficiene para enviar esta remesa");
                                     Console.WriteLine("");
-                                    Console.WriteLine("Presione cualquier tecla para continuar");
+                                    Console.WriteLine("Presione cualquier tecla para regresar al menú");
                                     Console.ReadKey();
                                     Console.Clear();
                                 }
@@ -149,7 +149,7 @@ class BANCOoficial
                                     Console.WriteLine("Remesa enviada a la cuenta:" + " " + remesaR + "                            ");
                                     Console.WriteLine("-------------------------------------------------------------");
                                     Console.WriteLine("");
-                                    Console.WriteLine("Presione cualquier tecla para continuar");
+                                    Console.WriteLine("Presione cualquier tecla para regresar al menú");
                                     Console.ReadKey();
                                     Console.Clear();
                                 }
@@ -171,7 +171,7 @@ class BANCOoficial
                                     Console.WriteLine("");
                                     Console.WriteLine("Saldo insuficiene para enviar esta remesa");
                                     Console.WriteLine("");
-                                    Console.WriteLine("Presione cualquier tecla para continuar");
+                                    Console.WriteLine("Presione cualquier tecla para regresar al menú");
                                     Console.ReadKey();
                                     Console.Clear();
                                 }
@@ -187,7 +187,7 @@ class BANCOoficial
                                     Console.WriteLine("Remesa enviada a la cuenta:" + " " + remesaR + "                            ");
                                     Console.WriteLine("-------------------------------------------------------------");
                                     Console.WriteLine("");
-                                    Console.WriteLine("Presione cualquier tecla para continuar");
+                                    Console.WriteLine("Presione cualquier tecla para regresar al menú");
                                     Console.ReadKey();
                                     Console.Clear();
                                 }
@@ -211,7 +211,7 @@ class BANCOoficial
                                     Console.WriteLine("");
                                     Console.WriteLine("Saldo insuficiene para realizar esta remesa");
                                     Console.WriteLine("");
-                                    Console.WriteLine("Presione cualquier tecla para continuar");
+                                    Console.WriteLine("Presione cualquier tecla para regresar al menú");
                                     Console.ReadKey();
                                     Console.Clear();
                                 }
@@ -227,7 +227,7 @@ class BANCOoficial
                                     Console.WriteLine("Remesa enviada a la cuenta:" + " " + remesaR + "                            ");
                                     Console.WriteLine("-------------------------------------------------------------");
                                     Console.WriteLine("");
-                                    Console.WriteLine("Presione cualquier tecla para continuar");
+                                    Console.WriteLine("Presione cualquier tecla para regresar al menú");
                                     Console.ReadKey();
                                     Console.Clear();
                                 }
@@ -250,7 +250,7 @@ class BANCOoficial
                                     Console.WriteLine("");
                                     Console.WriteLine("Saldo insuficiene para realizar esta remesa");
                                     Console.WriteLine("");
-                                    Console.WriteLine("Presione cualquier tecla para continuar");
+                                    Console.WriteLine("Presione cualquier tecla para regresar al menú");
                                     Console.ReadKey();
                                     Console.Clear();
                                 }
@@ -266,7 +266,7 @@ class BANCOoficial
                                     Console.WriteLine("Remesa enviada a la cuenta:" + " " + remesaR + "                            ");
                                     Console.WriteLine("-------------------------------------------------------------");
                                     Console.WriteLine("");
-                                    Console.WriteLine("Presione cualquier tecla para continuar");
+                                    Console.WriteLine("Presione cualquier tecla para regresar al menú");
                                     Console.ReadKey();
                                     Console.Clear();
                                 }
@@ -288,7 +288,7 @@ class BANCOoficial
                                     Console.WriteLine("");
                                     Console.WriteLine("Saldo insuficiene para realizar esta remesa");
                                     Console.WriteLine("");
-                                    Console.WriteLine("Presione cualquier tecla para continuar");
+                                    Console.WriteLine("Presione cualquier tecla para regresar al menú");
                                     Console.ReadKey();
                                     Console.Clear();
                                 }
@@ -304,7 +304,7 @@ class BANCOoficial
                                     Console.WriteLine("Remesa enviada a la cuenta:" + " " + remesaR + "                            ");
                                     Console.WriteLine("-------------------------------------------------------------");
                                     Console.WriteLine("");
-                                    Console.WriteLine("Presione cualquier tecla para continuar");
+                                    Console.WriteLine("Presione cualquier tecla para regresar al menú");
                                     Console.ReadKey();
                                     Console.Clear();
                                 }
@@ -326,7 +326,7 @@ class BANCOoficial
                                     Console.WriteLine("");
                                     Console.WriteLine("Saldo insuficiene para realizar esta remesa");
                                     Console.WriteLine("");
-                                    Console.WriteLine("Presione cualquier tecla para continuar");
+                                    Console.WriteLine("Presione cualquier tecla para regresar al menú");
                                     Console.ReadKey();
                                     Console.Clear();
                                 }
@@ -342,7 +342,7 @@ class BANCOoficial
                                     Console.WriteLine("Remesa enviada a la cuenta:" + " " + remesaR + "                            ");
                                     Console.WriteLine("-------------------------------------------------------------");
                                     Console.WriteLine("");
-                                    Console.WriteLine("Presione cualquier tecla para continuar");
+                                    Console.WriteLine("Presione cualquier tecla para regresar al menú");
                                     Console.ReadKey();
                                     Console.Clear();
                                 }
@@ -365,7 +365,7 @@ class BANCOoficial
                                     Console.WriteLine("");
                                     Console.WriteLine("Saldo insuficiene para realizar esta remesa");
                                     Console.WriteLine("");
-                                    Console.WriteLine("Presione cualquier tecla para continuar");
+                                    Console.WriteLine("Presione cualquier tecla para regresar al menú");
                                     Console.ReadKey();
                                     Console.Clear();
                                 }
@@ -381,7 +381,7 @@ class BANCOoficial
                                     Console.WriteLine("Remesa enviada a la cuenta:" + " " + remesaR + "                            ");
                                     Console.WriteLine("-------------------------------------------------------------");
                                     Console.WriteLine("");
-                                    Console.WriteLine("Presione cualquier tecla para continuar");
+                                    Console.WriteLine("Presione cualquier tecla para regresar al menú"); ;
                                     Console.ReadKey();
                                     Console.Clear();
                                 }
@@ -664,7 +664,7 @@ class BANCOoficial
                     Console.WriteLine("$" + " " + Saldodecuenta);
                     Console.WriteLine("----------------------------------------------------");
                     Console.WriteLine("");
-                    Console.WriteLine("Presione cualquier tecla para continuar");
+                    Console.WriteLine("Presione cualquier tecla para regresar al menú");
                     Console.ReadKey();
                     Console.Clear();
                     break;
@@ -677,7 +677,7 @@ class BANCOoficial
                     Console.WriteLine(" --------------------------------------------");
                     Console.WriteLine("           Su saldo actual es de ${0}        ", Saldodecuenta);
                     Console.WriteLine(" --------------------------------------------");
-                    Console.WriteLine("Presione cualquier tecla");
+                    Console.WriteLine("Presione cualquier tecla para regresar al menú");
                     Console.ReadKey();
                     Console.Clear();
                     break;
@@ -687,10 +687,10 @@ class BANCOoficial
                     Console.WriteLine("        Muchas gracias por utilizar el Banco.       ");
                     Console.WriteLine("----------------------------------------------------");
                     break;
-            }//B.1
+            }//C.1
 
 
-        } while (opcion != 0); //B
+        } while (opcion != 0); //C
     }
 }
 
