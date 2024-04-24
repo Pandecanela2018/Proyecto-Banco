@@ -4,6 +4,31 @@ class BANCOoficial
 {
     public static void Main(string[] args)
     {
+        static string ReadPassword()
+        {
+            string password = "";
+            ConsoleKeyInfo key;
+
+            do
+            {
+                key = Console.ReadKey(true);
+
+                // Solo agrega caracteres a la contraseña si no es una tecla de control
+                if (key.Key != ConsoleKey.Backspace && key.Key != ConsoleKey.Enter)
+                {
+                    password += key.KeyChar;
+                    Console.Write("*");
+                }
+                else if (key.Key == ConsoleKey.Backspace && password.Length > 0)
+                {
+                    password = password.Remove(password.Length - 1);
+                    Console.Write("\b \b");
+                }
+            } while (key.Key != ConsoleKey.Enter);
+
+            Console.WriteLine();
+            return password;
+        }
         double Saldodecuenta = 5500, monto, cuenta, Saldotarjetacredito = 350, Gastodetarjeta, TarjetaRestante, Intereses1 = 0, Intereses2 = 0.03, Intereses3 = 0.09, Intereses4 = 0.27, Saldocancelar, monedaC, remesaR, Pago;
         string Usuario = "UsuarioPrueba",  ResCorrecU, ResCorrecC, Contraseña = "3885";
         int Ntarjeta = 78631320, ResCorrecT, ResCorrecCVV, CVV = 555, opcion, diasdemora, bancos, moneda;
@@ -16,8 +41,7 @@ class BANCOoficial
             Console.WriteLine(" --------------------------------------------");
             Console.WriteLine("           Ingrese su contraseña: ");
             Console.WriteLine(" --------------------------------------------");
-            ResCorrecC = Convert.ToString(Console.ReadLine());
-            Console.WriteLine(" --------------------------------------------");
+            ResCorrecC = ReadPassword();
 
             if (ResCorrecC != Contraseña || ResCorrecU != Usuario) //A.1
             {
