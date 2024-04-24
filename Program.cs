@@ -1,6 +1,6 @@
 ﻿using System.Security.Cryptography;
 
-class BANCO
+class BANCOoficial
 {
     public static void Main(string[] args)
     {
