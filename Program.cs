@@ -3,35 +3,35 @@
     public static void Main(string[] args)
 
     {
-        static string ReadPassword()
+        static string ContraseñaOculta()//A
         {
-            string password = "";
+            string contraseñaguar = "";
             ConsoleKeyInfo key;
 
-            do
+            do//A.1
             {
                 key = Console.ReadKey(true);
 
                 // Solo agrega caracteres a la contraseña si no es una tecla de control
                 if (key.Key != ConsoleKey.Backspace && key.Key != ConsoleKey.Enter)
                 {
-                    password += key.KeyChar;
+                    contraseñaguar += key.KeyChar;
                     Console.Write("*");
                 }
-                else if (key.Key == ConsoleKey.Backspace && password.Length > 0)
+                else if (key.Key == ConsoleKey.Backspace && contraseñaguar.Length > 0)
                 {
-                    password = password.Remove(password.Length - 1);
+                    contraseñaguar = contraseñaguar.Remove(contraseñaguar.Length - 1);
                     Console.Write("\b \b");
                 }
-            } while (key.Key != ConsoleKey.Enter);
+            } while (key.Key != ConsoleKey.Enter);//A.1
 
             Console.WriteLine();
-            return password;
-        }
+            return contraseñaguar;
+        }//A
         double Saldodecuenta = 5500, monto, cuenta, Saldotarjetacredito = 565, Gastodetarjeta, TarjetaRestante, Intereses1 = 0, Intereses2 = 0.03, Intereses3 = 0.09, Intereses4 = 0.27, Saldocancelar, monedaC, remesaR, Pago;
         string Usuario = "UsuarioPrueba", ResCorrecU, ResCorrecC, Contraseña = "3885";
         int Ntarjeta = 78631320, ResCorrecT, ResCorrecCVV, CVV = 555, opcion, diasdemora, bancos, moneda;
-        do  // A = funcion Principal
+        do  // B = funcion Principal
         {
             Console.WriteLine(" --------------------------------------------");
             Console.WriteLine("       Ingrese su nombre de usuario: ");
@@ -40,21 +40,21 @@
             Console.WriteLine(" --------------------------------------------");
             Console.WriteLine("           Ingrese su contraseña: ");
             Console.WriteLine(" --------------------------------------------");
-            ResCorrecC = ReadPassword();
+            ResCorrecC = ContraseñaOculta();
 
-            if (ResCorrecC != Contraseña || ResCorrecU != Usuario) //A.1
+            if (ResCorrecC != Contraseña || ResCorrecU != Usuario) //B.1
             {
                 Console.Clear();
                 Console.WriteLine(" --------------------------------------------");
                 Console.WriteLine("    Usuario o Contraseña es incorrecto.      ");
                 Console.WriteLine("  Ingrese nuevamente su usuario y contraseña ");
                 Console.WriteLine(" --------------------------------------------");
-            }//A.1
+            }//B.1
 
-        } while (ResCorrecU != Usuario && ResCorrecC != Contraseña || ResCorrecC == Contraseña && ResCorrecU != Usuario || ResCorrecC != Contraseña && ResCorrecU == Usuario);// A
+        } while (ResCorrecU != Usuario && ResCorrecC != Contraseña || ResCorrecC == Contraseña && ResCorrecU != Usuario || ResCorrecC != Contraseña && ResCorrecU == Usuario);// B
         Console.Clear();
 
-        do //B = funcion principal
+        do //C = funcion principal
         {
             Console.WriteLine("Bienvenido, " + Usuario);
             Console.WriteLine(" --------------------------------------------");
@@ -64,7 +64,7 @@
             opcion = Convert.ToInt32(Console.ReadLine());
             Console.Clear();
 
-            switch (opcion) //B.1
+            switch (opcion) //C.1
             {
                 case 1:
                     Console.WriteLine("");
@@ -707,10 +707,10 @@
                     Console.WriteLine("        Muchas gracias por utilizar el Banco.       ");
                     Console.WriteLine("----------------------------------------------------");
                     break;
-            }//B.1
+            }//C.1
 
 
-        } while (opcion != 0); //B
+        } while (opcion != 0); //C
     }
 }
 
